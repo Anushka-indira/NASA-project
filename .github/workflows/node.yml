@@ -2,8 +2,8 @@ name : NASA Prject CI
 
 on:
   push:
-    branches: [master]
-    pull_request: [master]
+    branches: [main]
+    pull_request: [main]
 jobs:
   build:
     runs-on: ubuntu-latest
