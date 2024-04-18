@@ -5,11 +5,11 @@ const { mongoDisconnect, mongoConnect } = require("../../services/mongo");
 describe("Launches API", () => {
   beforeAll(async () => {
     await mongoConnect();
-  },20000);
+  },90000);
 
   afterAll(async ()=>{
     await mongoDisconnect();
-  },20000)
+  },90000)
 
   describe("Test GET /launches", () => {
     test("it should respnd with 200 success", async () => {
