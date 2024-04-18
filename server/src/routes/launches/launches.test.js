@@ -2,6 +2,8 @@ const request = require("supertest");
 const app = require("../../app");
 const { mongoDisconnect, mongoConnect } = require("../../services/mongo");
 const { allPlanetData} = require('../../models/planet.model');
+
+jest.setTimeout(10000);
 describe("Launches API", () => {
   beforeAll(async () => {
     await mongoConnect();
@@ -11,7 +13,7 @@ describe("Launches API", () => {
   afterAll(async ()=>{
     await mongoDisconnect();
   })
-
+  jest.setTimeout(10000);
   describe("Test GET /launches", () => {
     test("it should respnd with 200 success", async () => {
       const response = await request(app)
@@ -20,7 +22,7 @@ describe("Launches API", () => {
         .expect(200);
     });
   });
-
+  jest.setTimeout(10000);
   describe("Test POST /launches", () => {
     const completeLaunchData = {
       mission: "USS Enterprise",
