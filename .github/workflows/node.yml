@@ -27,3 +27,6 @@ jobs:
       - run: npm install
       - run: npm run build --prefix client
       - run: npm test 
+      - name: Follow-up command
+        if: always()
+        run:  echo "Tests completed, proceeding with next command."
