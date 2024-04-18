@@ -8,7 +8,7 @@ jobs:
   build:
     env:
       CI: true
-      MONGO_URL: mongodb+srv://nasa-api:anushkaagrawal512@cluster0.fwp5e6t.mongodb.net/nasa?retryWrites=true&w=majority&appName=Cluster0
+      MONGO_URL: mongodb://localhost/nasa
     strategy:
       matrix:
         node-version: ['20.11.1']
