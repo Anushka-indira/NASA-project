@@ -5,7 +5,7 @@ const { mongoDisconnect, mongoConnect } = require("../../services/mongo");
 describe("Launches API", () => {
   beforeAll(async () => {
     await mongoConnect();
-  });
+  },10000);
 
   afterAll(async ()=>{
     await mongoDisconnect();
@@ -18,7 +18,7 @@ describe("Launches API", () => {
         .expect("Content-Type", /json/)
         .expect(200);
     });
-  });
+  },10000);
 
   describe("Test POST /launches", () => {
     const completeLaunchData = {
