@@ -3,13 +3,13 @@ const app = require("../../app");
 const { mongoDisconnect, mongoConnect } = require("../../services/mongo");
 
 describe("Launches API", () => {
-  beforeAll(async () => {
+  beforeEach(async () => {
     await mongoConnect();
-  },10000);
+  });
 
-  afterAll(async ()=>{
+  afterEach(async ()=>{
     await mongoDisconnect();
-  },10000);
+  });
 
   describe("Test GET /launches", () => {
     test("it should respnd with 200 success", async () => {
