@@ -5,11 +5,11 @@ const { mongoDisconnect, mongoConnect } = require("../../services/mongo");
 describe("Launches API", () => {
   beforeAll(async () => {
     await mongoConnect();
-  });
+  },10000);
 
   afterAll(async ()=>{
     await mongoDisconnect();
-  })
+  },10000);
 
   describe("Test GET /launches", () => {
     test("it should respnd with 200 success", async () => {
@@ -80,7 +80,3 @@ describe("Launches API", () => {
     });
   });
 });
-
-module.exports = {
-  testTimeout: 10000, 
-};
